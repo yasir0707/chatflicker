@@ -1,0 +1,2 @@
+mongo "mongodb+srv://chat.n9fu8.mongodb.net/myFirstDatabase" --username yasir
+
