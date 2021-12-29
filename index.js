@@ -1,9 +1,6 @@
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
-var fileUpload = require('express-fileupload');
-var initializeApp = require('firebase/app')
-var getAnalytics = require('firebase/analytics')
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // var busboy = require('connect-busboy');
@@ -42,6 +39,9 @@ app.all('/*', function(req, res, next) {
     next()}
    );
 
+   app.use('/',(req,res)=>{
+    res.send('<h1>Api</h1>')
+})
 //  User
 app.use('/user',User)
 
@@ -62,10 +62,12 @@ app.use('/link',link_r)
 // Graph
 app.use('/graph',graph)
 
-app.listen(config.port, (err)=>{
+var port  = process.env.port || 8080;
+
+app.listen(port, (err)=>{
     if(err){
 
-        console.log('Error at server 1111')
+        console.log('Error at server')
     }
     else{
         console.log('Server at '+config.port)

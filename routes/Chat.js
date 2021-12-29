@@ -656,7 +656,7 @@ router.post('/userstatus/:id',async (req,res)=>{
      else{
          res.json("user not status")
      }
- })
+ });
  
 
 module.exports = router
